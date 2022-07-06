@@ -144,8 +144,18 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import { IHead } from "@/types/pages/privacy-policy/index"
+
 export default Vue.extend({
-	name: "privacy-policy-page"
+	name: "privacy-policy-page",
+	head(): IHead {
+		return {
+			title: `${process.env.BASE_URL} - Privacy Policy - One Time Self Destructing Links For Sharing Sensitive Information`,
+			meta: [
+				{ hid: "description", name: "description", content: `Privacy Policy for ${process.env.BASE_URL}.  A site to create secure one time self destructing notes to send sensitive information with simple short urls.` },
+			],
+		}
+	},
 })
 </script>
 

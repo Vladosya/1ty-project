@@ -92,10 +92,21 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import { IHead, IData } from "@/types/pages/_id";
+
 export default Vue.extend({
 	name: "note-page",
-	async created() {
+	head(): IHead {
+		return {
+			title: "1ty.me - One Time Self Destructing Links For Sharing Sensitive Information",
+			meta: [
+				{ hid: "description", name: "description", content: "Create secure one time self destructing notes to send sensitive information with simple short urls." },
+			],
+		}
+	},
+	async created(): Promise<void> {
 		const checkNoteById = await this.$store.dispatch("home/getNoteById", this.$route.params.id);
+
 		if (checkNoteById.length > 0) {
 			if (checkNoteById[0].is_readed === true) {
 				this.isBeforeReadLink = false;
@@ -109,7 +120,7 @@ export default Vue.extend({
 			this.$router.push("/");
 		}
 	},
-	async beforeDestroy() {
+	async beforeDestroy(): Promise<void> {
 		await this.$store.dispatch("home/deleteNoteById", this.$route.params.id);
 		this.isBeforeReadLink = false;
 		this.isAfterReadLink = false;
@@ -118,7 +129,7 @@ export default Vue.extend({
 		this.inputLink = "";
 		this.isCopyLink = false;
 	},
-	data() {
+	data(): IData {
 		return {
 			isBeforeReadLink: false,
 			isAfterReadLink: false,

@@ -91,8 +91,18 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import { IHead } from "@/types/pages/faq/index";
+
 export default Vue.extend({
-	name: "faq-page"
+	name: "faq-page",
+	head(): IHead {
+		return {
+			title: `${process.env.BASE_URL} - FAQ - One Time Self Destructing Links For Sharing Sensitive Information`,
+			meta: [
+				{ hid: "description", name: "description", content: "Frequency Asked Questions for 1ty.me. A site to create secure one time self destructing notes to send sensitive information with simple short urls." },
+			],
+		}
+	},
 })
 </script>
 

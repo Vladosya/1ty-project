@@ -126,13 +126,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
+
 import { IHead, IData, IResCreateNote } from "@/types/pages/index";
 
 export default Vue.extend({
 	name: "home-page",
 	head(): IHead {
 		return {
-			title: "1ty.me - One Time Self Destructing Links For Sharing Sensitive Information",
+			title: `${process.env.BASE_URL} - One Time Self Destructing Links For Sharing Sensitive Information`,
 			meta: [
 				{ hid: "description", name: "description", content: "Create secure one time self destructing notes to send sensitive information with simple short urls." },
 			],

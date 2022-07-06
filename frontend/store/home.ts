@@ -1,43 +1,22 @@
 import { GetterTree, ActionTree, MutationTree } from 'vuex'
 
-interface INote {
-  date_create: string
-  date_read: string
-  id: number
-  is_readed: boolean
-  note_id: string
-  note_message: string
-}
-
-export const state = () => ({
-  //   note: [] as INote[],
-})
+export const state = () => ({})
 
 export type RootState = ReturnType<typeof state>
 
-export const getters: GetterTree<RootState, RootState> = {
-  //   note: (state) => state.note,
-}
+export const getters: GetterTree<RootState, RootState> = {}
 
-export const mutations: MutationTree<RootState> = {
-  //   ADD_NOTE: (state, payload: INote[]) => {
-  //  state.note = payload
-  //   },
-}
+export const mutations: MutationTree<RootState> = {}
 
 export const actions: ActionTree<RootState, RootState> = {
   async createNote(_: object, formData: string) {
     try {
-      console.log('formData', formData)
-
       const response = await this.$axios.$post(
         `${process.env.SERVER_URL}/note`,
         {
           message: formData,
         }
       )
-
-      console.log('response -->', response)
 
       if (response.status === 200) {
         return {

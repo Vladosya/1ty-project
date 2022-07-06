@@ -71,9 +71,11 @@
 <script lang="ts">
 import Vue from 'vue'
 
+import { IHead } from "@/types/pages/about/index";
+
 export default Vue.extend({
 	name: "about-page",
-	head() {
+	head(): IHead {
 		return {
 			title: `${process.env.BASE_URL} - About - One Time Self Destructing Links For Sharing Sensitive Information`,
 			meta: [
