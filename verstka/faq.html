@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/styleFaq.css" />
+    <link rel="stylesheet" href="./style/zeroing.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="main-header">
+          <div class="main-header-left">
+            <div class="main-header-left__title">1ty.me - "One Time"</div>
+          </div>
+          <div class="main-header-right">
+            <div class="main-header-right__title">
+              One Time Self Destructing Links For Sharing Sensitive Information
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="container">
+          <div class="main-content-faq">
+            <div class="main-content-faq__title">Frequency Asked Questions</div>
+            <div class="main-content-faq__header">How secure is 1ty.me?</div>
+            <div class="main-content-faq__text">
+              1ty.me runs only in HTTPS. Meaning any data transferred to or from the server is
+              encrypted. All notes are encrypted before being stored on the server and only a
+              portion of the key to decrypt is contained in the URL. This URL is not stored on the
+              server, so only the link can decrypt the notes. Once the notes are viewed the
+              encrypted notes are removed from the system. Pretty secure.
+            </div>
+            <div class="main-content-faq__header">How are the notes stored before being read?</div>
+            <div class="main-content-faq__text">
+              The notes are encrypted and put into a database. The URL is hashed so you can not link
+              a URL to a note directly.
+            </div>
+            <div class="main-content-faq__header">
+              Can I retrieve a note after it has been read?
+            </div>
+            <div class="main-content-faq__text">
+              No. It is removed from the system after being displayed once.
+            </div>
+            <div class="main-content-faq__header">Can you read the notes?</div>
+            <div class="main-content-faq__text">
+              No. The notes are encrypted using a key that is never stored on the server. Only the
+              valid URL can display the notes. Once the notes are viewed the encrypted notes are
+              removed from the system and the link can not be viewed again.
+            </div>
+            <div class="main-content-faq__header">How do I know the note has been read?</div>
+            <div class="main-content-faq__text">
+              You may choose to enter your email address when creating a note to receive a email
+              notifying you the note has been read. You may also enter a reference to keep track of
+              the note if sending multiple URL's. The email address is encrypted in the same fashion
+              as notes and deleted upon the note being viewed.
+            </div>
+            <div class="main-content-faq__header">
+              But this is what public/private key (asymmetric) cryptography is for? Why not use PGP?
+            </div>
+            <div class="main-content-faq__text">
+              We agree. If you and your recipient can use asymmetric cryptography (like PGP) then go
+              for it. But our clients do not want to deal with that! They do not see the problem of
+              sending passwords over regular email. This is easy enough for anyone to use without
+              the knowledge of asymmetric cryptography.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-footer">
+        <div class="container">
+          <div class="main-footer-content">
+            <div class="main-footer-content__left">
+              <div>
+                <a class="main-footer-content__left_link" href="#">About 1ty.me</a>
+              </div>
+              <div>
+                <a class="main-footer-content__left_link" href="#">Frequently Asked Questions</a>
+              </div>
+              <div>
+                <a class="main-footer-content__left_link" href="#">Privacy Policy</a>
+              </div>
+              <div>
+                <a class="main-footer-content__left_link" href="#">ApogeeInvent</a>
+              </div>
+            </div>
+            <div class="main-footer-content__right">© 2011 - 2022 ApogeeInvent</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
