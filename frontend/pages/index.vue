@@ -162,7 +162,7 @@ export default Vue.extend({
 		}
 	},
 	methods: {
-		goHome() {
+		goHome(): void {
 			if (this.isReadyLink === true) {
 				this.isReadyLink = false;
 				this.isCopyLink = false;
@@ -178,7 +178,7 @@ export default Vue.extend({
 				}
 			}, 10000)
 		},
-		copyText() {
+		copyText(): void {
 			navigator.clipboard.writeText(this.inputLink);
 			this.isCopyLink = true;
 			this.$notify({
@@ -188,13 +188,13 @@ export default Vue.extend({
 				position: "top-right",
 			});
 		},
-		generateAnotherLink() {
+		generateAnotherLink(): void {
 			this.isCopyLink = false;
 			this.inputLink = "";
 			this.isReadyLink = false;
 			this.isForm = true;
 		},
-		async submitCreateNoteForm() {
+		async submitCreateNoteForm(): Promise<void> {
 			try {
 				if (this.createNoteForm.messageInput.length === 0) {
 					this.$message({
